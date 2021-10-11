@@ -14,8 +14,15 @@ const BoardList = () => {
       },
     },
   };
-  const precess = ["밀링", "선반"];
-  const material = ["알루미늄", "탄소강", "구리", "합금강", "강철"];
+  const process = ["밀링", "선반"];
+  const material = [
+    "알루미늄",
+    "탄소강",
+    "구리",
+    "합금강",
+    "강철",
+    "스테인리스강",
+  ];
   const [processName, setProcessName] = useState<string[]>([]);
   const [materialName, setMaterialName] = useState<string[]>([]);
 
@@ -40,11 +47,16 @@ const BoardList = () => {
     console.log(event.target.checked);
   };
 
+  const onClickinitialization = () => {
+    setProcessName([]);
+    setMaterialName([]);
+  };
+
   return (
     <BoardListUI
       onChangeProcess={onChangeProcess}
       onChangeMaterial={onChangeMaterial}
-      precess={precess}
+      process={process}
       material={material}
       processName={processName}
       materialName={materialName}
@@ -52,9 +64,8 @@ const BoardList = () => {
       info={requests}
       onChangeState={onChangeState}
       checked={checked}
+      onClickinitialization={onClickinitialization}
     />
   );
 };
 export default BoardList;
-
-//  === === === === === === === === ===
