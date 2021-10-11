@@ -2,7 +2,6 @@ import {
   Wrapper,
   TitleWrapper,
   TitleMenu,
-  LeftPage,
   Title,
   RightTitleWrapper,
   Text,

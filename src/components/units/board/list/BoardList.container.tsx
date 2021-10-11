@@ -44,7 +44,6 @@ const BoardList = () => {
 
   const onChangeState = (event: ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
-    console.log(event.target.checked);
   };
 
   const onClickinitialization = () => {
