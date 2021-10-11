@@ -96,13 +96,22 @@ const BoardListUI = (props: IBoardListUIProps) => {
         </SwitchWrapper>
       </MiddleWrapper>
       <BodyWrapper>
-        {console.log(props.materialName, props.processName)}
         {props.info.requests.map((data: Idata, index: number) => {
           if (
             props.processName.length === 0 &&
             props.materialName.length === 0
           ) {
-            return <BoardCard data={data} key={index} />;
+            return (
+              <>
+                {props.checked === false ? (
+                  <BoardCard data={data} key={index} />
+                ) : (
+                  data.status === "상담중" && (
+                    <BoardCard data={data} key={index} />
+                  )
+                )}
+              </>
+            );
           }
           if (!props.checked) {
             if (

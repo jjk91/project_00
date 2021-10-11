@@ -1,16 +1,20 @@
 import {
   Wrapper,
   TitleWrapper,
+  TitleMenu,
+  LeftPage,
   Title,
   RightTitleWrapper,
   Text,
   Icon,
 } from "./LayoutHeader.style";
 
-const LayoutHeaderUI = () => {
+const LayoutHeaderUI = (props) => {
   return (
     <Wrapper>
       <TitleWrapper>
+        <TitleMenu onClick={() => props.setOpen(!open)} />
+
         <Title src="/img/logo.png" />
         <RightTitleWrapper>
           <Text>
