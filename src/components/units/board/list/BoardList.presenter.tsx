@@ -115,7 +115,14 @@ const BoardListUI = (props: IBoardListUIProps) => {
             }
           }
           if (data.status === "상담중") {
-            return <BoardCard data={data} key={index} />;
+            if (
+              props.processName.filter((el) => data.method.includes(el))
+                .length ||
+              props.materialName.filter((el) => data.material.includes(el))
+                .length
+            ) {
+              return <BoardCard data={data} key={index} />;
+            }
           }
         })}
       </BodyWrapper>
